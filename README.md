@@ -2,15 +2,15 @@
 
 Quiz responsivo feito em HTML, CSS e JavaScript puro. Não precisa de build, servidor ou dependências: a Vercel pode publicar os arquivos estáticos diretamente.
 
-## Configurar o WhatsApp
+## WhatsApp
 
-Antes de publicar, abra `app.js` e preencha `WHATSAPP_NUMBER` com o número da equipe, incluindo código do país e DDD, mas sem `+`, espaços ou pontuação. Exemplo:
+O WhatsApp está configurado para o número da equipe, com código do Brasil e DDD:
 
 ```js
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5544997158781";
 ```
 
-Enquanto o número estiver vazio, os botões do resultado abrem o WhatsApp com a mensagem pronta para o visitante escolher um contato. Depois de preenchido, a mensagem será direcionada diretamente para o número configurado. O botão de parceria inclui as respostas do quiz.
+Os botões da tela de resultado abrem uma conversa diretamente com esse número. O botão de parceria inclui as respostas do quiz na mensagem.
 
 ## Publicar na Vercel
 
