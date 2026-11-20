@@ -1,6 +1,16 @@
 # Traz Pra Cá — Quiz
 
-Quiz responsivo feito em HTML, CSS e JavaScript puro. Não precisa de build, servidor ou dependências: a Vercel pode publicar os arquivos estáticos diretamente.
+Quiz responsivo feito em HTML, CSS e JavaScript puro. Não precisa de build ou dependências; as imagens do carrossel ficam na pasta `assets`.
+
+## Carrossel da apresentação
+
+As imagens são carregadas localmente e alternam entre lanches, farmácia, marmitas, padaria e sorvetes. Fotos originais no Unsplash:
+
+- [Hambúrguer](https://images.unsplash.com/photo-1568901346375-23c9450c58cd)
+- [Farmácia](https://images.unsplash.com/photo-1584308666744-24d5c474f2ae)
+- [Marmitas](https://images.unsplash.com/photo-1546069901-ba9599a7e63c)
+- [Padaria](https://images.unsplash.com/photo-1509440159596-0249088772ff)
+- [Sorvetes](https://images.unsplash.com/photo-1563805042-7684c019e1cb)
 
 ## WhatsApp
 

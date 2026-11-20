@@ -4,15 +4,15 @@ const WHATSAPP_NUMBER = "5544997158781";
 
 const screens = [...document.querySelectorAll("[data-screen]")];
 const answers = {
-  "question-1": "Sim, seria ótimo!",
-  "question-2": "Sim, e gostaria de facilitar ainda mais",
-  "question-3": "Receber mais pedidos",
+  objective: "Aumentar as vendas",
+  categories: [],
 };
 
 const questionSteps = {
-  "question-1": 1,
-  "question-2": 2,
-  "question-3": 3,
+  objective: 2,
+  categories: 3,
+  "how-it-works": 4,
+  result: 5,
 };
 
 function showScreen(screenName) {
@@ -27,29 +27,40 @@ function showScreen(screenName) {
     screen.classList.toggle("is-active", isActive);
   }
 
+  if (screenName === "welcome") {
+    startCarousel();
+  } else {
+    stopCarousel();
+  }
+
+  const screenContent = nextScreen.querySelector(".screen-top");
+  if (screenContent) {
+    screenContent.scrollTop = 0;
+  }
+
   const step = questionSteps[screenName];
   if (step) {
-    const percentage = `${(step / 3) * 100}%`;
-    nextScreen.querySelector("[data-step-label]").textContent = `${step} de 3`;
+    const percentage = `${(step / 5) * 100}%`;
+    nextScreen.querySelector("[data-step-label]").textContent = `${step}/5`;
     nextScreen.querySelector("[data-progress]").style.width = percentage;
-    nextScreen.querySelector(".progress-badge").style.left = percentage;
+    nextScreen.querySelector("[role='progressbar']").setAttribute("aria-valuenow", String(step));
   }
 
   document.querySelector("[data-announcer]").textContent =
     nextScreen.querySelector("h1")?.textContent ?? "Traz Pra Cá";
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
 }
 
 function updateWhatsAppLinks() {
   const phone = WHATSAPP_NUMBER.replace(/\D/g, "");
   const isDirectLink = phone.length > 0;
   const messages = {
-    partner: `Olá! Quero ser parceiro do Traz Pra Cá.
+    partner: `Olá! Quero começar a vender online com o Traz Pra Cá.
 
 Minhas respostas:
-1. ${answers["question-1"]}
-2. ${answers["question-2"]}
-3. ${answers["question-3"]}`,
+Objetivo: ${answers.objective}
+Categorias: ${answers.categories.length > 0 ? answers.categories.join(", ") : "Ainda não selecionadas"}`,
     contact: "Olá! Quero saber mais sobre o Traz Pra Cá.",
   };
 
@@ -66,19 +77,85 @@ Minhas respostas:
     : "Configure o número da equipe no arquivo app.js para direcionar estas mensagens diretamente.";
 }
 
+const carouselSlides = [...document.querySelectorAll("[data-slide]")];
+const carouselDots = [...document.querySelectorAll("[data-carousel-dot]")];
+const carouselAnnouncer = document.querySelector("[data-carousel-announcer]");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let activeSlide = 0;
+let carouselTimer;
+
+function showCarouselSlide(index, announce = false) {
+  activeSlide = (index + carouselSlides.length) % carouselSlides.length;
+
+  carouselSlides.forEach((slide, slideIndex) => {
+    const isActive = slideIndex === activeSlide;
+    slide.classList.toggle("is-active", isActive);
+    slide.setAttribute("aria-hidden", String(!isActive));
+  });
+
+  carouselDots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === activeSlide;
+    dot.classList.toggle("is-active", isActive);
+    dot.setAttribute("aria-pressed", String(isActive));
+  });
+
+  if (announce) {
+    carouselAnnouncer.textContent = carouselSlides[activeSlide].querySelector(".carousel-caption").textContent;
+  }
+}
+
+function stopCarousel() {
+  window.clearInterval(carouselTimer);
+}
+
+function startCarousel() {
+  stopCarousel();
+  if (
+    prefersReducedMotion.matches ||
+    document.hidden ||
+    !document.querySelector(".welcome-screen.is-active")
+  ) {
+    return;
+  }
+
+  carouselTimer = window.setInterval(() => {
+    showCarouselSlide(activeSlide + 1);
+  }, 5000);
+}
+
 document.addEventListener("click", (event) => {
   const target = event.target instanceof Element ? event.target : null;
   if (!target) return;
 
+  const carouselDot = target.closest("[data-carousel-dot]");
+  if (carouselDot) {
+    showCarouselSlide(Number(carouselDot.dataset.carouselDot), true);
+    startCarousel();
+    return;
+  }
+
   const option = target.closest(".option-card");
   if (option) {
     const group = option.closest("[data-options]");
-    for (const sibling of group.querySelectorAll(".option-card")) {
-      const selected = sibling === option;
-      sibling.classList.toggle("is-selected", selected);
-      sibling.setAttribute("aria-pressed", String(selected));
+    if (!group) return;
+
+    const selected = option.getAttribute("aria-pressed") !== "true";
+    if (group.dataset.selectionMode === "multiple") {
+      const categories = answers[group.dataset.options];
+      option.classList.toggle("is-selected", selected);
+      option.setAttribute("aria-pressed", String(selected));
+      answers[group.dataset.options] = selected
+        ? [...categories, option.dataset.value]
+        : categories.filter((category) => category !== option.dataset.value);
+    } else {
+      for (const sibling of group.querySelectorAll(".option-card")) {
+        const isSelected = sibling === option;
+        sibling.classList.toggle("is-selected", isSelected);
+        sibling.setAttribute("aria-pressed", String(isSelected));
+      }
+      answers[group.dataset.options] = option.dataset.value;
     }
-    answers[group.dataset.options] = option.dataset.value;
+
     updateWhatsAppLinks();
     return;
   }
@@ -97,4 +174,8 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document.addEventListener("visibilitychange", startCarousel);
+prefersReducedMotion.addEventListener("change", startCarousel);
+showCarouselSlide(0);
+startCarousel();
 updateWhatsAppLinks();

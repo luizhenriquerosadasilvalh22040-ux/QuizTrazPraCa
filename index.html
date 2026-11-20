@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Descubra como o Traz Pra Cá pode aproximar sua loja dos clientes da sua cidade."
+      content="Conheça o Traz Pra Cá e descubra como vender online com praticidade e entrega para os seus clientes."
     />
-    <meta name="theme-color" content="#f3f7ed" />
+    <meta name="theme-color" content="#131412" />
     <title>Traz Pra Cá | Sua loja, mais perto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,348 +15,338 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="./assets/hero-hamburguer.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./app.js" defer></script>
   </head>
   <body>
     <main class="app-shell">
       <section class="screen welcome-screen is-active" data-screen="welcome" aria-labelledby="welcome-title">
+        <div class="hero-carousel" data-carousel role="region" aria-roledescription="carrossel" aria-label="Categorias atendidas pelo Traz Pra Cá">
+          <div class="carousel-slide is-active" data-slide role="group" aria-roledescription="slide" aria-label="1 de 5: Lanches">
+            <img src="./assets/hero-hamburguer.jpg" alt="" fetchpriority="high" />
+            <span class="carousel-caption">Lanches</span>
+          </div>
+          <div class="carousel-slide" data-slide role="group" aria-roledescription="slide" aria-label="2 de 5: Farmácia" aria-hidden="true">
+            <img src="./assets/hero-farmacia.jpg" alt="" loading="lazy" />
+            <span class="carousel-caption">Farmácia</span>
+          </div>
+          <div class="carousel-slide" data-slide role="group" aria-roledescription="slide" aria-label="3 de 5: Marmitas" aria-hidden="true">
+            <img src="./assets/hero-marmitas.jpg" alt="" loading="lazy" />
+            <span class="carousel-caption">Marmitas</span>
+          </div>
+          <div class="carousel-slide" data-slide role="group" aria-roledescription="slide" aria-label="4 de 5: Padaria" aria-hidden="true">
+            <img src="./assets/hero-padaria.jpg" alt="" loading="lazy" />
+            <span class="carousel-caption">Padaria</span>
+          </div>
+          <div class="carousel-slide" data-slide role="group" aria-roledescription="slide" aria-label="5 de 5: Sorvetes" aria-hidden="true">
+            <img src="./assets/hero-sorvetes.jpg" alt="" loading="lazy" />
+            <span class="carousel-caption">Sorvetes</span>
+          </div>
+          <div class="hero-shade" aria-hidden="true"></div>
+        </div>
+
         <div class="welcome-content">
           <header class="header-row">
             <a class="brand" href="#" aria-label="Traz Pra Cá, início" data-home>
               <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 44 40" fill="none">
-                  <path d="M3 15h7M2 21h7M4 27h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-                  <path d="M13 12h24l3 23H11l2-23Z" fill="#7ed900" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" />
-                  <path d="M19 12V9a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                <svg viewBox="0 0 40 40" fill="none">
+                  <rect width="40" height="40" rx="11" fill="currentColor" />
+                  <path d="M12 27 27 12m-12 0h12v12" stroke="#151612" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
               <span class="brand-copy">
-                <span class="brand-name">Traz Pra Cá</span>
-                <span class="brand-tag">DELIVERY</span>
+                <span class="brand-name">TRAZ<br />PRA CÁ</span>
+                <span class="brand-tag">delivery</span>
               </span>
             </a>
           </header>
 
-          <div class="hero">
-            <div class="hero-art" aria-hidden="true">
-              <span class="sun"></span>
-              <span class="storefront">
-                <span class="store-awning"></span>
-                <span class="store-window"></span>
-                <span class="store-door"></span>
-              </span>
-              <span class="plant plant-one"></span>
-              <span class="plant plant-two"></span>
-              <span class="road"></span>
-              <span class="delivery-bag">🛍️</span>
-            </div>
-            <div class="hero-copy">
-              <span class="eyebrow"><span class="eyebrow-dot"></span> Mais perto, mais conectado</span>
-              <h1 id="welcome-title">Sua loja pode estar <span>na internet.</span></h1>
-              <p>
-                Conheça uma forma simples de aumentar a visibilidade do seu comércio e receber pedidos pelo WhatsApp.
-              </p>
-            </div>
-            <button class="button button-lime hero-button" type="button" data-go="question-1">
+          <div class="hero-copy">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> Mais perto, mais conectado</span>
+            <h1 id="welcome-title">Foque em vender,<br /><span>a entrega é conosco.</span></h1>
+            <p>
+              Você cuida dos produtos e do atendimento da sua loja. A gente cuida da entrega, com praticidade e sem complicação.
+            </p>
+            <button class="button button-lime hero-button" type="button" data-go="objective">
               <span>Vamos descobrir<br />como funciona?</span>
               <span class="button-arrow" aria-hidden="true">→</span>
             </button>
           </div>
 
-          <div class="benefits" aria-label="Benefícios">
-            <div class="benefit">
-              <span class="benefit-icon" aria-hidden="true">⌕</span>
-              <span>Sua loja<br />online</span>
-            </div>
-            <span class="benefit-divider" aria-hidden="true"></span>
-            <div class="benefit">
-              <span class="benefit-icon" aria-hidden="true">▤</span>
-              <span>Pedidos no<br />WhatsApp</span>
-            </div>
-            <span class="benefit-divider" aria-hidden="true"></span>
-            <div class="benefit">
-              <span class="benefit-icon" aria-hidden="true">♧</span>
-              <span>Entrega<br />organizada</span>
-            </div>
+          <div class="carousel-controls" aria-label="Imagens de categorias">
+            <button class="carousel-dot is-active" type="button" aria-label="Exibir imagem de lanches" aria-pressed="true" data-carousel-dot="0"></button>
+            <button class="carousel-dot" type="button" aria-label="Exibir imagem de farmácia" aria-pressed="false" data-carousel-dot="1"></button>
+            <button class="carousel-dot" type="button" aria-label="Exibir imagem de marmitas" aria-pressed="false" data-carousel-dot="2"></button>
+            <button class="carousel-dot" type="button" aria-label="Exibir imagem de padaria" aria-pressed="false" data-carousel-dot="3"></button>
+            <button class="carousel-dot" type="button" aria-label="Exibir imagem de sorvetes" aria-pressed="false" data-carousel-dot="4"></button>
+            <span class="sr-only" aria-live="polite" data-carousel-announcer>Lanches</span>
           </div>
-          <p class="welcome-note">Uma nova forma de fazer sua loja chegar mais longe.</p>
         </div>
       </section>
 
-      <section class="screen question-screen" data-screen="question-1" aria-labelledby="question-1-title" hidden>
+      <section class="screen quiz-screen" data-screen="objective" aria-labelledby="objective-title" hidden>
         <div class="screen-top">
           <header class="header-row">
             <a class="brand" href="#" aria-label="Traz Pra Cá, início" data-home>
               <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 44 40" fill="none">
-                  <path d="M3 15h7M2 21h7M4 27h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-                  <path d="M13 12h24l3 23H11l2-23Z" fill="#7ed900" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" />
-                  <path d="M19 12V9a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                <svg viewBox="0 0 40 40" fill="none">
+                  <rect width="40" height="40" rx="11" fill="currentColor" />
+                  <path d="M12 27 27 12m-12 0h12v12" stroke="#151612" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span class="brand-copy">
-                <span class="brand-name">Traz Pra Cá</span>
-                <span class="brand-tag">DELIVERY</span>
-              </span>
+              <span class="brand-copy"><span class="brand-name">TRAZ<br />PRA CÁ</span><span class="brand-tag">delivery</span></span>
             </a>
-            <span class="step-counter" data-step-label>1 de 3</span>
+            <div class="step-status">
+              <span class="step-counter" data-step-label>2/5</span>
+              <div class="progress-track" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2">
+                <span class="progress-fill" data-progress></span>
+              </div>
+            </div>
           </header>
 
-          <div class="progress-wrapper" aria-label="Progresso do quiz">
-            <div class="progress-track">
-              <div class="progress-fill" data-progress></div>
-              <span class="progress-badge" aria-hidden="true">🛵</span>
-            </div>
-          </div>
-
           <div class="question-content">
-            <span class="question-icon" aria-hidden="true">👀</span>
             <p class="question-kicker">Vamos falar sobre sua loja</p>
-            <h1 class="question-title" id="question-1-title">Você gostaria de aumentar a visibilidade da sua loja na cidade?</h1>
-            <div class="options-list" role="group" aria-labelledby="question-1-title" data-options="question-1">
-              <button class="option-card is-selected" type="button" aria-pressed="true" data-value="Sim, seria ótimo!">
-                <span class="option-radio" aria-hidden="true"></span><span>Sim, seria ótimo!</span>
+            <h1 class="question-title" id="objective-title">Qual o <span>objetivo</span><br />para seu negócio?</h1>
+            <p class="question-support">O que você busca alcançar?</p>
+            <div class="options-grid objective-options" role="group" aria-labelledby="objective-title" data-options="objective">
+              <button class="option-card is-selected" type="button" aria-pressed="true" data-value="Aumentar as vendas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 19V5m0 14h16M8 15l4-4 3 2 5-6" /><path d="M15 7h5v5" />
+                </svg>
+                <span>Aumentar<br />as vendas</span>
               </button>
-              <button class="option-card" type="button" aria-pressed="false" data-value="Já tenho clientes suficientes">
-                <span class="option-radio" aria-hidden="true"></span><span>Já tenho clientes suficientes</span>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Ganhar tempo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3 2" />
+                </svg>
+                <span>Ganhar tempo</span>
               </button>
-              <button class="option-card" type="button" aria-pressed="false" data-value="Quero saber mais sobre essa possibilidade">
-                <span class="option-radio" aria-hidden="true"></span><span>Quero saber mais sobre essa possibilidade</span>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Melhorar o atendimento">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 3 2.2 5.3L20 9l-4.3 3.8 1.2 5.7L12 15.6l-4.9 2.9 1.2-5.7L4 9l5.8-.7L12 3Z" />
+                </svg>
+                <span>Melhorar<br />o atendimento</span>
+              </button>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Oferecer mais comodidade">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.5 8.8c0 5-8.5 11-8.5 11s-8.5-6-8.5-11a4.5 4.5 0 0 1 8.5-2.1 4.5 4.5 0 0 1 8.5 2.1Z" />
+                </svg>
+                <span>Oferecer mais<br />comodidade</span>
               </button>
             </div>
           </div>
         </div>
         <footer class="nav-footer">
-          <button class="button-back" type="button" aria-label="Voltar para o início" data-go="welcome">←</button>
-          <button class="button button-lime" type="button" data-go="question-2">
-            Próximo <span class="button-arrow" aria-hidden="true">→</span>
-          </button>
+          <button class="button-back" type="button" aria-label="Voltar para o início" data-go="welcome">← <span>Voltar</span></button>
+          <button class="button button-lime" type="button" data-go="categories">Próximo <span class="button-arrow" aria-hidden="true">→</span></button>
         </footer>
       </section>
 
-      <section class="screen question-screen" data-screen="question-2" aria-labelledby="question-2-title" hidden>
+      <section class="screen quiz-screen" data-screen="categories" aria-labelledby="categories-title" hidden>
         <div class="screen-top">
           <header class="header-row">
             <a class="brand" href="#" aria-label="Traz Pra Cá, início" data-home>
               <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 44 40" fill="none">
-                  <path d="M3 15h7M2 21h7M4 27h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-                  <path d="M13 12h24l3 23H11l2-23Z" fill="#7ed900" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" />
-                  <path d="M19 12V9a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                <svg viewBox="0 0 40 40" fill="none">
+                  <rect width="40" height="40" rx="11" fill="currentColor" />
+                  <path d="M12 27 27 12m-12 0h12v12" stroke="#151612" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span class="brand-copy">
-                <span class="brand-name">Traz Pra Cá</span>
-                <span class="brand-tag">DELIVERY</span>
-              </span>
+              <span class="brand-copy"><span class="brand-name">TRAZ<br />PRA CÁ</span><span class="brand-tag">delivery</span></span>
             </a>
-            <span class="step-counter" data-step-label>2 de 3</span>
+            <div class="step-status">
+              <span class="step-counter" data-step-label>3/5</span>
+              <div class="progress-track" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3">
+                <span class="progress-fill" data-progress></span>
+              </div>
+            </div>
           </header>
 
-          <div class="progress-wrapper" aria-label="Progresso do quiz">
-            <div class="progress-track">
-              <div class="progress-fill" data-progress></div>
-              <span class="progress-badge" aria-hidden="true">🛵</span>
-            </div>
-          </div>
-
-          <div class="question-content">
-            <span class="question-icon" aria-hidden="true">💬</span>
-            <p class="question-kicker">Seu atendimento, do seu jeito</p>
-            <h1 class="question-title" id="question-2-title">Você recebe pedidos pelo WhatsApp?</h1>
-            <div class="options-list" role="group" aria-labelledby="question-2-title" data-options="question-2">
-              <button class="option-card is-selected" type="button" aria-pressed="true" data-value="Sim, e gostaria de facilitar ainda mais">
-                <span class="option-radio" aria-hidden="true"></span><span>Sim, e gostaria de facilitar ainda mais</span>
+          <div class="question-content category-content">
+            <p class="question-kicker">Cada loja tem seu jeito</p>
+            <h1 class="question-title category-title" id="categories-title">Não importa a <span>categoria</span>: de mercado a depósito, você pode vender online por delivery.</h1>
+            <p class="question-support">Escolha as categorias que mais se encaixam no seu negócio.</p>
+            <div class="options-grid category-options" role="group" aria-labelledby="categories-title" data-options="categories" data-selection-mode="multiple">
+              <button class="option-card" type="button" aria-pressed="false" data-value="Hambúrguer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 10a8 8 0 0 1 16 0H4Zm0 3h16m-15 0v3h14v-3m-12 6h10" />
+                </svg><span>Hambúrguer</span>
               </button>
-              <button class="option-card" type="button" aria-pressed="false" data-value="Ainda não, mas tenho interesse">
-                <span class="option-radio" aria-hidden="true"></span><span>Ainda não, mas tenho interesse</span>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Marmitas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 9h16l-1 11H5L4 9Zm0 0a8 8 0 0 1 16 0M8 5V3m4 2V3m4 2V3" />
+                </svg><span>Marmitas</span>
               </button>
-              <button class="option-card" type="button" aria-pressed="false" data-value="Não recebo pedidos pelo WhatsApp">
-                <span class="option-radio" aria-hidden="true"></span><span>Não recebo pedidos pelo WhatsApp</span>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Sorvetes">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 11h10l-4.2 9a.9.9 0 0 1-1.6 0L7 11Zm5 0a4 4 0 1 1 4-4c0 .8-.2 1.4-.6 2" />
+                </svg><span>Sorvetes</span>
+              </button>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Pizzas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m4 5 16 14a1 1 0 0 1-1.2 1.6L3 8a2 2 0 0 1 1-3Z" /><path d="m4 5 16 14M8 9l-2 2m7 1-2 2m7 1-2 2" />
+                </svg><span>Pizzas</span>
+              </button>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Padarias">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 10c0-4 3-7 8-7s8 3 8 7v9H4v-9Zm4-3v4m4-6v6m4-4v4" />
+                </svg><span>Padarias</span>
+              </button>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Farmácias">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m9 4 11 11a4 4 0 0 1-5.7 5.7l-11-11A4 4 0 0 1 9 4Z" /><path d="m6 12 6-6m1 11 3-3" />
+                </svg><span>Farmácias</span>
+              </button>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Mercados">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 9h18l-1 11H4L3 9Zm-1 0 2-5h16l2 5M8 9v11m8-11v11" />
+                </svg><span>Mercados</span>
+              </button>
+              <button class="option-card" type="button" aria-pressed="false" data-value="Depósitos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 10 12 4l9 6v10H3V10Zm5 10v-6h8v6m-8-9h.01M12 11h.01m3 0h.01" />
+                </svg><span>Depósitos</span>
               </button>
             </div>
           </div>
         </div>
         <footer class="nav-footer">
-          <button class="button-back" type="button" aria-label="Voltar para a pergunta anterior" data-go="question-1">←</button>
-          <button class="button button-lime" type="button" data-go="question-3">
-            Próximo <span class="button-arrow" aria-hidden="true">→</span>
-          </button>
+          <button class="button-back" type="button" aria-label="Voltar para o objetivo do negócio" data-go="objective">← <span>Voltar</span></button>
+          <button class="button button-lime" type="button" data-go="how-it-works">Próximo <span class="button-arrow" aria-hidden="true">→</span></button>
         </footer>
       </section>
 
-      <section class="screen question-screen" data-screen="question-3" aria-labelledby="question-3-title" hidden>
+      <section class="screen quiz-screen explainer-screen" data-screen="how-it-works" aria-labelledby="how-title" hidden>
         <div class="screen-top">
           <header class="header-row">
             <a class="brand" href="#" aria-label="Traz Pra Cá, início" data-home>
               <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 44 40" fill="none">
-                  <path d="M3 15h7M2 21h7M4 27h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-                  <path d="M13 12h24l3 23H11l2-23Z" fill="#7ed900" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" />
-                  <path d="M19 12V9a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                <svg viewBox="0 0 40 40" fill="none">
+                  <rect width="40" height="40" rx="11" fill="currentColor" />
+                  <path d="M12 27 27 12m-12 0h12v12" stroke="#151612" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span class="brand-copy">
-                <span class="brand-name">Traz Pra Cá</span>
-                <span class="brand-tag">DELIVERY</span>
-              </span>
+              <span class="brand-copy"><span class="brand-name">TRAZ<br />PRA CÁ</span><span class="brand-tag">delivery</span></span>
             </a>
-            <span class="step-counter" data-step-label>3 de 3</span>
-          </header>
-
-          <div class="progress-wrapper" aria-label="Progresso do quiz">
-            <div class="progress-track">
-              <div class="progress-fill" data-progress></div>
-              <span class="progress-badge" aria-hidden="true">🛵</span>
+            <div class="step-status">
+              <span class="step-counter" data-step-label>4/5</span>
+              <div class="progress-track" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="1" aria-valuemax="5" aria-valuenow="4">
+                <span class="progress-fill" data-progress></span>
+              </div>
             </div>
-          </div>
-
-          <div class="question-content">
-            <span class="question-icon" aria-hidden="true">✨</span>
-            <p class="question-kicker">O que faz mais diferença?</p>
-            <h1 class="question-title" id="question-3-title">Qual a principal vantagem para o seu negócio?</h1>
-            <div class="options-list" role="group" aria-labelledby="question-3-title" data-options="question-3">
-              <button class="option-card is-selected" type="button" aria-pressed="true" data-value="Receber mais pedidos">
-                <span class="option-radio" aria-hidden="true"></span><span>Receber mais pedidos</span>
-              </button>
-              <button class="option-card" type="button" aria-pressed="false" data-value="Divulgar meus produtos">
-                <span class="option-radio" aria-hidden="true"></span><span>Divulgar meus produtos</span>
-              </button>
-              <button class="option-card" type="button" aria-pressed="false" data-value="Oferecer entrega para meus clientes">
-                <span class="option-radio" aria-hidden="true"></span><span>Oferecer entrega para meus clientes</span>
-              </button>
-              <button class="option-card" type="button" aria-pressed="false" data-value="Outro motivo">
-                <span class="option-radio" aria-hidden="true"></span><span>Outro motivo</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <footer class="nav-footer">
-          <button class="button-back" type="button" aria-label="Voltar para a pergunta anterior" data-go="question-2">←</button>
-          <button class="button button-lime" type="button" data-go="how-it-works">
-            Ver meu resultado <span class="button-arrow" aria-hidden="true">→</span>
-          </button>
-        </footer>
-      </section>
-
-      <section class="screen explainer-screen" data-screen="how-it-works" aria-labelledby="how-title" hidden>
-        <div class="screen-top">
-          <header class="header-center">
-            <a class="brand brand-large" href="#" aria-label="Traz Pra Cá, início" data-home>
-              <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 44 40" fill="none">
-                  <path d="M3 15h7M2 21h7M4 27h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-                  <path d="M13 12h24l3 23H11l2-23Z" fill="#7ed900" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" />
-                  <path d="M19 12V9a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-                </svg>
-              </span>
-              <span class="brand-copy">
-                <span class="brand-name">Traz Pra Cá</span>
-                <span class="brand-tag">DELIVERY</span>
-              </span>
-            </a>
           </header>
           <div class="explain-heading">
-            <span class="question-icon" aria-hidden="true">🚲</span>
-            <p class="question-kicker">Simples para você. Perto de quem compra.</p>
-            <h1 class="question-title" id="how-title">Como funciona?</h1>
+            <h1 class="question-title" id="how-title">Como <span>funciona?</span></h1>
+            <p class="question-support">É simples, rápido e sem complicação.</p>
           </div>
           <div class="steps-list">
             <article class="explain-step">
-              <span class="explain-icon" aria-hidden="true">🏪</span>
-              <div><h2>Sua loja na internet</h2><p>Cadastre seus produtos e apresente sua loja para mais pessoas.</p></div>
+              <span class="explain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 10h18l-1.5-6h-15L3 10Z" /><path d="M5 10v10h14V10M9 20v-6h6v6M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0" />
+                </svg>
+              </span>
+              <span class="explain-number">1</span>
+              <div><h2>Sua loja na internet</h2><p>Cadastre seus produtos e deixe sua loja pronta para receber pedidos.</p></div>
             </article>
             <article class="explain-step">
-              <span class="explain-icon" aria-hidden="true">💬</span>
+              <span class="explain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-2 2v-6a7.5 7.5 0 1 1 17-3.5Z" /><path d="M8 11h8m-8 3h5" />
+                </svg>
+              </span>
+              <span class="explain-number">2</span>
               <div><h2>Pedidos no WhatsApp</h2><p>Receba os pedidos direto no seu WhatsApp.</p></div>
             </article>
             <article class="explain-step">
-              <span class="explain-icon" aria-hidden="true">📦</span>
-              <div><h2>Você prepara o pedido</h2><p>Atualize o status e confirme a entrega direto no WhatsApp.</p></div>
+              <span class="explain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13.5 8.5 15a3.2 3.2 0 0 1-4.5-4.5l4-4a3.2 3.2 0 0 1 4.5 0M14 10.5l1.5-1.5a3.2 3.2 0 0 1 4.5 4.5l-4 4a3.2 3.2 0 0 1-4.5 0" /><path d="m9 15 6-6" />
+                </svg>
+              </span>
+              <span class="explain-number">3</span>
+              <div><h2>Link próprio</h2><p>Sua loja tem um link próprio para você continuar usando suas redes sociais. Tudo fica integrado automaticamente.</p></div>
             </article>
             <article class="explain-step">
-              <span class="explain-icon" aria-hidden="true">🛵</span>
-              <div><h2>A entrega segue o caminho</h2><p>O entregador retira e entrega com segurança.</p></div>
+              <span class="explain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 7h10v10H4zM14 10h4l3 3v4h-7" /><path d="M7.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" /><path d="M7 10h4" />
+                </svg>
+              </span>
+              <span class="explain-number">4</span>
+              <div><h2>Você prepara o pedido</h2><p>Atualize o status e confirme a entrega direto no WhatsApp. Você foca no que mais sabe fazer; a gente entrega para você de forma rápida e sem complexidade.</p></div>
+            </article>
+            <article class="explain-step">
+              <span class="explain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 17h2l2-5h7l3 5h2M8 12l-2-3h4l2 3m1 0 2-3 3 2" /><circle cx="7" cy="18" r="2" /><circle cx="18" cy="18" r="2" /><path d="m14 7 2-2m-5 0h3" />
+                </svg>
+              </span>
+              <span class="explain-number">5</span>
+              <div><h2>A entrega segue o caminho</h2><p>Você recebe o pedido, confirma e solicita a entrega direto no WhatsApp, sem precisar ficar com o painel aberto o tempo todo.</p></div>
             </article>
           </div>
         </div>
         <footer class="nav-footer">
-          <button class="button-back" type="button" aria-label="Voltar para a última pergunta" data-go="question-3">←</button>
-          <button class="button button-lime" type="button" data-go="result">
-            Continuar <span class="button-arrow" aria-hidden="true">→</span>
-          </button>
+          <button class="button-back" type="button" aria-label="Voltar para as categorias" data-go="categories">← <span>Voltar</span></button>
+          <button class="button button-lime" type="button" data-go="result">Próximo <span class="button-arrow" aria-hidden="true">→</span></button>
         </footer>
       </section>
 
       <section class="screen result-screen" data-screen="result" aria-labelledby="result-title" hidden>
-        <div class="result-top">
-          <header class="header-center">
-            <a class="brand brand-large" href="#" aria-label="Traz Pra Cá, início" data-home>
+        <div class="screen-top">
+          <header class="header-row">
+            <a class="brand" href="#" aria-label="Traz Pra Cá, início" data-home>
               <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 44 40" fill="none">
-                  <path d="M3 15h7M2 21h7M4 27h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-                  <path d="M13 12h24l3 23H11l2-23Z" fill="#7ed900" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" />
-                  <path d="M19 12V9a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+                <svg viewBox="0 0 40 40" fill="none">
+                  <rect width="40" height="40" rx="11" fill="currentColor" />
+                  <path d="M12 27 27 12m-12 0h12v12" stroke="#151612" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span class="brand-copy">
-                <span class="brand-name">Traz Pra Cá</span>
-                <span class="brand-tag">DELIVERY</span>
-              </span>
+              <span class="brand-copy"><span class="brand-name">TRAZ<br />PRA CÁ</span><span class="brand-tag">delivery</span></span>
             </a>
+            <div class="step-status">
+              <span class="step-counter" data-step-label>5/5</span>
+              <div class="progress-track" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="1" aria-valuemax="5" aria-valuenow="5">
+                <span class="progress-fill" data-progress></span>
+              </div>
+            </div>
           </header>
-          <div class="result-illustration" aria-hidden="true">
-            <span class="result-sparkle sparkle-one">✦</span>
-            <span class="result-sparkle sparkle-two">✦</span>
-            <span class="result-store">
-              <span class="result-awning"></span>
-              <span class="result-door"></span>
-              <span class="result-window"></span>
+          <div class="result-content">
+            <span class="result-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12 4.5 4.5L19 7" />
+              </svg>
             </span>
-            <span class="result-plant"></span>
-            <span class="result-path"></span>
-            <span class="result-bag">🛍️</span>
-          </div>
-          <div class="result-copy">
-            <p class="question-kicker">Seu próximo passo começa aqui</p>
-            <h1 class="result-title" id="result-title">Sua loja <span>mais conectada</span> com seus clientes!</h1>
-            <p class="result-subtitle">
-              Faça parte do Traz Pra Cá e descubra como vender mais na sua cidade.
-            </p>
+            <h1 class="result-title" id="result-title">Pronto!</h1>
+            <p class="result-subtitle">Aproveite hoje mesmo e comece a vender online hoje mesmo.</p>
           </div>
           <div class="final-actions">
-            <a class="button button-dark" data-whatsapp="partner" href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20ser%20parceiro%20do%20Traz%20Pra%20C%C3%A1!" target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">🏪</span>
-              Quero ser parceiro
-              <span class="button-arrow" aria-hidden="true">→</span>
+            <a class="button button-lime" data-whatsapp="partner" href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20ser%20parceiro%20do%20Traz%20Pra%20C%C3%A1!" target="_blank" rel="noopener noreferrer">
+              Quero começar agora <span class="button-arrow" aria-hidden="true">→</span>
             </a>
             <a class="button button-outline" data-whatsapp="contact" href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Traz%20Pra%20C%C3%A1!" target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">◉</span>
               Falar pelo WhatsApp
             </a>
           </div>
           <p class="whatsapp-note" data-whatsapp-note hidden></p>
         </div>
-        <div class="city-footer" aria-hidden="true">
-          <svg viewBox="0 0 420 125" role="presentation">
-            <path d="M0 64h420v61H0z" fill="#eaf7d5" />
-            <path d="M0 71c69-25 129-19 200-3 72 16 145 18 220-7v64H0z" fill="#d5efae" />
-            <path d="M28 52h53v48H28z" fill="#fff" stroke="#28643d" stroke-width="2" />
-            <path d="m22 53 33-25 33 25H22Z" fill="#a3e635" stroke="#28643d" stroke-width="2" stroke-linejoin="round" />
-            <path d="M39 62h11v12H39zm20 0h11v12H59z" fill="#a3e635" stroke="#28643d" stroke-width="1.5" />
-            <path d="M52 82h11v18H52z" fill="#e5f4c9" stroke="#28643d" stroke-width="1.5" />
-            <path d="M119 47h57v53h-57z" fill="#fff" stroke="#28643d" stroke-width="2" />
-            <path d="m112 48 36-25 35 25h-71Z" fill="#7ed900" stroke="#28643d" stroke-width="2" stroke-linejoin="round" />
-            <path d="M131 58h12v13h-12zm22 0h12v13h-12z" fill="#e5f4c9" stroke="#28643d" stroke-width="1.5" />
-            <circle cx="238" cy="58" r="20" fill="#fff" stroke="#28643d" stroke-width="2" />
-            <path d="M238 48v13l9 5" stroke="#28643d" stroke-width="2" stroke-linecap="round" />
-            <path d="M300 100c14-30 30-45 47-46 17 1 33 16 47 46" fill="#a3e635" stroke="#28643d" stroke-width="2" />
-            <path d="M347 96V57m0 22-14-12m14 22 14-13" stroke="#28643d" stroke-width="2" stroke-linecap="round" />
-            <path d="M0 105c76-13 147-10 210 0s132 9 210-1" fill="none" stroke="#65b300" stroke-width="3" />
-          </svg>
-          <p><strong>Traz Pra Cá.</strong><span>Sua loja, mais perto de quem precisa.</span></p>
+        <div class="result-visual" aria-hidden="true">
+          <span class="delivery-path"></span>
+          <span class="delivery-scooter">
+            <svg viewBox="0 0 200 130" fill="none">
+              <circle cx="48" cy="103" r="18" stroke="currentColor" stroke-width="8" />
+              <circle cx="151" cy="103" r="18" stroke="currentColor" stroke-width="8" />
+              <path d="m48 103 27-48h41l35 48H98L75 55m36 0h25l15 48m-75-73h32l13 25H75m43-25 16-12h14" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M100 35h53v48h-53z" fill="#baff36" stroke="#151612" stroke-width="5" />
+              <path d="M109 51h35m-35 15h24" stroke="#151612" stroke-width="5" stroke-linecap="round" />
+            </svg>
+          </span>
         </div>
+        <footer class="result-footer">
+          <p><strong>Traz Pra Cá.</strong><span>Sua loja, mais perto de quem precisa.</span></p>
+        </footer>
       </section>
 
       <div class="sr-only" aria-live="polite" data-announcer></div>
